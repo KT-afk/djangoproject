@@ -1,0 +1,73 @@
+{% extends 'website/base.html' %}
+{% load crispy_forms_tags %}
+{% block content %}
+
+	<div class="content-section" id="calendar">
+		<div class="monthname">
+			<span id="month_name"></span>
+		</div>
+		<div class="clearfix calendar">
+				<!--<a class="btn btn-info right" href="{% url 'event_new' %}"> New Event </a>-->
+			
+			{{calendar}}
+		</div>
+		<!--<div class="clearfix">
+			<a class="btn btn-info left" href="{% url 'calendar' %}?{{ prev_month }}"> < </a>
+			<a class="btn btn-info right" href="{% url 'calendar' %}?{{ next_month }}"> > </a>
+		</div>-->
+		
+  	</div>
+  	<div class="modal fade" id="eventModal" tabindex="-1" role="dialog" aria-labelledby="newevent" aria-hidden="true">
+  		{% if messages %}
+			<ul class="messages">
+			    {% for message in messages %}
+			    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+			    {% endfor %}
+			</ul>
+		{% endif %}
+  	</div>
+  	<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editevent" aria-hidden="true">
+  		{% if messages %}
+			<ul class="messages">
+			    {% for message in messages %}
+			    <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+			    {% endfor %}
+			</ul>
+		{% endif %}
+  	</div>
+<script>
+	const dateNo = new Date();  
+	var month = dateNo.toLocaleString('default', { month: 'short' }).toString();
+	var year = dateNo.getUTCFullYear().toString();
+	month = month + " " + year;
+	document.getElementById('month_name').innerHTML = month;
+
+	$(".eventB").click(function(ev) { // for each edit contact url
+        	ev.preventDefault(); // prevent navigation
+        	var url = $(this).data("form"); // get the contact form url
+        	var clickId = ev.target.id.split("-");
+        	var preDate = new Date(clickId);
+        	console.log(preDate);
+        	//date = date.append(" UTC").toString();
+        	$("#eventModal").load(url, function() { // load the url into the modal
+            	$(this).modal('show'); // display the modal on url load
+            	preDate = preDate.toISOString().substring(0, 10) + "T08:00";
+            	var field = document.getElementById("start_time");
+            	console.log(preDate);
+            	field.value = preDate;
+            	console.log(field.value);
+
+        	});
+
+        return false; // prevent the click propagation
+    });
+    $(".editB").click(function(ev) { // for each edit contact url
+        	ev.preventDefault(); // prevent navigation
+        	var url = $(this).data("form"); // get the contact form url
+        	$("#editModal").load(url, function() { // load the url into the modal
+            	$(this).modal('show'); // display the modal on url load
+        	});
+        return false; // prevent the click propagation
+    });
+</script>
+{% endblock %}

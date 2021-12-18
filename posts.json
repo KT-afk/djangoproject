@@ -1,0 +1,57 @@
+[
+	{
+		"title": "My Updated Post",
+		"content": "My first updated post!\r\n\r\nThis is exciting!", 
+		"user_id": 1
+	}, 
+	{
+		"title": "My sorrow",
+		"content": "Dear Diary, I am sad", 
+		"user_id": 2
+	}, 
+	{
+		"title": "My happiness",
+		"content": "I am happy", 
+		"user_id": 3
+	}, 
+	{
+		"title": "Pain",
+		"content": "Enduring the pain of my bones shattering into dust and my muscles tightening to the point of exploding", 
+		"user_id": 1
+	}, 
+	{
+		"title": "Soul",
+		"content": "What is a soul? Where do human souls go after dying?", 
+		"user_id": 2
+	}, 
+	{
+		"title": "Reincarnation Cycle",
+		"content": "Is there such a thing as a reincarnation cycle or do our souls die as well when we die?", 
+		"user_id": 3
+	}, 
+	{
+		"title": "Life",
+		"content": "The cycle of life. Living and dying. What is the meaning of it and is there even such a thing?", 
+		"user_id": 4
+	}, 
+	{
+		"title": "Problems",
+		"content": "Why do we have so many problems in our lives? Is it a trial or is it just things that naturally happen?", 
+		"user_id": 1
+	}, 
+	{
+		"title": "Perfection ",
+		"content": "Why do people say we can't be perfect? Is it because we are inherently imperfect or are we just lazy to chase after an idea of perfection?", 
+		"user_id": 2
+	}, 
+	{
+		"title": "World",
+		"content": "How long do our worlds live for? Have they seen countless civilizations like us die and repeat the same mistakes over and over again?", 
+		"user_id": 3
+	}, 
+	{
+		"title": "Universe",
+		"content": "What does the universe mean? Is there really countless galaxies beyond us in different star systems or are we all alone in this universe?", 
+		"user_id": 4
+	}
+] 
